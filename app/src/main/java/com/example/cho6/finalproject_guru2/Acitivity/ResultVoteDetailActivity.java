@@ -39,8 +39,6 @@ public class ResultVoteDetailActivity extends AppCompatActivity {
 
         mTxtTitle.setText(mVoteBean.voteTitle);
         mTxtEx.setText(mVoteBean.voteSubTitle);
-
-
     }
 
     @Override

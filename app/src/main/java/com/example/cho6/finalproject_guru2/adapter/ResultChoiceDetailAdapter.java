@@ -56,7 +56,7 @@ public class ResultChoiceDetailAdapter extends BaseAdapter {
         TextView txtVoteCount = view.findViewById(R.id.txtVoteCount);
         Button btnResultDetail = view.findViewById(R.id.btnResultDetail);
 
-        ChoiceBean choiceBean = mChoiceList.get(position);
+        final ChoiceBean choiceBean = mChoiceList.get(position);
 
         txtNum.setText( String.valueOf(position+1) );
         txtChoiceTitle.setText( choiceBean.itemTitle );
@@ -67,7 +67,7 @@ public class ResultChoiceDetailAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(mContext, ShowVotePeopleActivity.class);
-                i.putExtra(VoteBean.class.getName(), mVoteBean);
+                i.putExtra(ChoiceBean.class.getName(), choiceBean);
                 mContext.startActivity(i);
             }
         });
