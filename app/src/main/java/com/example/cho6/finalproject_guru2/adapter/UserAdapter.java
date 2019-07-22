@@ -78,9 +78,27 @@ public class UserAdapter extends BaseAdapter {
         btnShowResult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(mContext, ResultVoteActivity.class);
-                i.putExtra(VoteBean.class.getName(), voteBean);
-                mContext.startActivity(i);
+                final Dialog dlg = new Dialog(mContext);
+                dlg.setContentView(R.layout.view_custom_dialog);
+                dlg.show();
+                final EditText edtCode = dlg.findViewById(R.id.edtCode);
+                Button btnOk = dlg.findViewById(R.id.btnOK);
+                btnOk.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String code = edtCode.getText().toString();
+                        if(TextUtils.equals(voteBean.voteCode, code) ) {
+
+                            Intent i = new Intent(mContext, ResultVoteActivity.class);
+                            i.putExtra(VoteBean.class.getName(), voteBean);
+                            mContext.startActivity(i);
+                            dlg.dismiss();
+                        }
+                        else {
+                            Toast.makeText(mContext, "코드가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         });
         //투표하기
@@ -111,7 +129,7 @@ public class UserAdapter extends BaseAdapter {
                         long end = sdf.parse(voteBean.voteEndDate+" "+voteBean.voteEndTime).getTime();
 
                         if(end > now){
-                            Dialog dlg = new Dialog(mContext);
+                            final Dialog dlg = new Dialog(mContext);
                             dlg.setContentView(R.layout.view_custom_dialog);
                             dlg.show();
                             final EditText edtCode = dlg.findViewById(R.id.edtCode);
@@ -125,6 +143,7 @@ public class UserAdapter extends BaseAdapter {
                                         Intent i=new Intent(mContext,VoteActivity.class);
                                         i.putExtra(VoteBean.class.getName(), voteBean);
                                         mContext.startActivity(i);
+                                        dlg.dismiss();
                                     }
                                     else {
                                         Toast.makeText(mContext, "코드가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
