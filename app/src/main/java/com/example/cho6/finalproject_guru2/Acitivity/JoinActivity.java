@@ -86,8 +86,7 @@ public class JoinActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(getBaseContext(), "Firebase 로그인 성공",
-                            Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getBaseContext(), "Firebase 로그인 성공",Toast.LENGTH_LONG).show();
 
                     goRealUserMainActivity();
                 }else{

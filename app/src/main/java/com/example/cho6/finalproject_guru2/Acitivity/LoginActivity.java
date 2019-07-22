@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
             try {
                 //구글 로그인 성공
                 final GoogleSignInAccount account = task.getResult(ApiException.class);
-                Toast.makeText(getBaseContext(), "로그인에 성공 하였습니다.", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), "구글 로그인에 성공 하였습니다.", Toast.LENGTH_LONG).show();
 
                 final String loginedEmail = account.getEmail();
 

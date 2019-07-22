@@ -246,7 +246,7 @@ public class RegVoteActivity extends AppCompatActivity {
 
     //투표추가
     private void addVote() {
-        Toast.makeText(this, "addVote()실행", Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "addVote()실행", Toast.LENGTH_LONG).show();
 
         List<ChoiceBean> choiceList = mChoiceAdapter.getChoiceList();
         boolean isContinue = true;
@@ -313,14 +313,15 @@ public class RegVoteActivity extends AppCompatActivity {
             voteBean.overlap = false;
             voteBean.startVote = false;
 
-            //Firebase 데이터베이스에 투표를 등록한다.
-            DatabaseReference dbRef = mFirebaseDatabase.getReference();
-            dbRef.child("votes").child(voteBean.voteID).setValue(voteBean);
 
-            Toast.makeText(this, "투표가 추가 되었습니다.", Toast.LENGTH_SHORT).show();
-
-            finish();
         }
+        //Firebase 데이터베이스에 투표를 등록한다.
+        DatabaseReference dbRef = mFirebaseDatabase.getReference();
+        dbRef.child("votes").child(voteBean.voteID).setValue(voteBean);
+
+        Toast.makeText(this, "투표가 추가 되었습니다.", Toast.LENGTH_SHORT).show();
+
+        finish();
 
 
     }
