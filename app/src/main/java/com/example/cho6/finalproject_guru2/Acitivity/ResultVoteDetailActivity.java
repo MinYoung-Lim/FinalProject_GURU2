@@ -1,5 +1,6 @@
 package com.example.cho6.finalproject_guru2.Acitivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cho6.finalproject_guru2.Bean.VoteBean;
+import com.example.cho6.finalproject_guru2.Fragment.AdminVoteFragment;
 import com.example.cho6.finalproject_guru2.R;
 import com.example.cho6.finalproject_guru2.adapter.ResultChoiceDetailAdapter;
 import com.example.cho6.finalproject_guru2.adapter.UserVoteResultAdapter;
@@ -24,7 +26,7 @@ public class ResultVoteDetailActivity extends AppCompatActivity {
     private TextView mTxtTitle, mTxtEx;
     public ResultChoiceDetailAdapter mResultChoiceDetailAdapter;
     private VoteBean mVoteBean;
-    public Button mBtnBack;
+    public Button mbtnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +36,20 @@ public class ResultVoteDetailActivity extends AppCompatActivity {
         mTxtTitle = findViewById(R.id.txtTitle);
         mTxtEx = findViewById(R.id.txtVoteEx);
         mListView = findViewById(R.id.lstResultChoice);
+        mbtnBack=findViewById(R.id.btnBack);
 
         mVoteBean = (VoteBean) getIntent().getSerializableExtra(VoteBean.class.getName());
 
         mTxtTitle.setText(mVoteBean.voteTitle);
         mTxtEx.setText(mVoteBean.voteSubTitle);
+        mbtnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+
     }
 
     @Override

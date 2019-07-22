@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cho6.finalproject_guru2.Bean.VoteBean;
+import com.example.cho6.finalproject_guru2.Fragment.AdminVoteFragment;
 import com.example.cho6.finalproject_guru2.R;
 import com.example.cho6.finalproject_guru2.adapter.UserVoteResultAdapter;
 import com.google.firebase.database.DataSnapshot;
@@ -38,6 +39,7 @@ public class ResultVoteActivity extends AppCompatActivity {
 
         mTxtTitle.setText(mVoteBean.voteTitle);
         mTxtEx.setText(mVoteBean.voteSubTitle);
+
         mbtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
