@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:background="#ffffff">
 
+
     <EditText
         android:id="@+id/edtCode"
         android:layout_width="match_parent"
@@ -12,6 +13,7 @@
         android:gravity="center"
         android:hint="참여코드를 입력하세요."
         android:textColor="#000000"
+        android:inputType="textPassword"
         android:textSize="16dp" />
 
     <LinearLayout

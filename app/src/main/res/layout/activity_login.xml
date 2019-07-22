@@ -15,15 +15,14 @@
         android:layout_height="490dp"
         app:srcCompat="@drawable/app_main_img" />
 
-    <com.google.android.gms.common.SignInButton
+    <ImageButton
         android:id="@+id/btnGoogleSignIn"
-        android:layout_width="231dp"
+        android:layout_width="166dp"
         android:layout_height="66dp"
         android:layout_gravity="center"
         android:layout_marginTop="0dp"
-        android:background="@color/colorAccent"
-        >
+        android:background="@drawable/login_btn">
 
-    </com.google.android.gms.common.SignInButton>
+    </ImageButton>
 
 </LinearLayout>
