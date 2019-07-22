@@ -1,6 +1,5 @@
 package com.example.cho6.finalproject_guru2.Acitivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,10 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cho6.finalproject_guru2.Bean.VoteBean;
-import com.example.cho6.finalproject_guru2.Fragment.AdminVoteFragment;
 import com.example.cho6.finalproject_guru2.R;
 import com.example.cho6.finalproject_guru2.adapter.ResultChoiceDetailAdapter;
-import com.example.cho6.finalproject_guru2.adapter.UserVoteResultAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;

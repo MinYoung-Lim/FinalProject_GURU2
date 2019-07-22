@@ -78,27 +78,32 @@ public class UserAdapter extends BaseAdapter {
         btnShowResult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final Dialog dlg = new Dialog(mContext);
-                dlg.setContentView(R.layout.view_custom_dialog);
-                dlg.show();
-                final EditText edtCode = dlg.findViewById(R.id.edtCode);
-                Button btnOk = dlg.findViewById(R.id.btnOK);
-                btnOk.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        String code = edtCode.getText().toString();
-                        if(TextUtils.equals(voteBean.voteCode, code) ) {
+                if( TextUtils.isEmpty(voteBean.voteCode) ){
+                    Intent i = new Intent(mContext, ResultVoteActivity.class);
+                    i.putExtra(VoteBean.class.getName(), voteBean);
+                    mContext.startActivity(i);
+                }else {
+                    final Dialog dlg = new Dialog(mContext);
+                    dlg.setContentView(R.layout.view_custom_dialog);
+                    dlg.show();
+                    final EditText edtCode = dlg.findViewById(R.id.edtCode);
+                    Button btnOk = dlg.findViewById(R.id.btnOK);
+                    btnOk.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            String code = edtCode.getText().toString();
+                            if (TextUtils.equals(voteBean.voteCode, code)) {
 
-                            Intent i = new Intent(mContext, ResultVoteActivity.class);
-                            i.putExtra(VoteBean.class.getName(), voteBean);
-                            mContext.startActivity(i);
-                            dlg.dismiss();
+                                Intent i = new Intent(mContext, ResultVoteActivity.class);
+                                i.putExtra(VoteBean.class.getName(), voteBean);
+                                mContext.startActivity(i);
+                                dlg.dismiss();
+                            } else {
+                                Toast.makeText(mContext, "코드가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                        else {
-                            Toast.makeText(mContext, "코드가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+                    });
+                }
             }
         });
         //투표하기
