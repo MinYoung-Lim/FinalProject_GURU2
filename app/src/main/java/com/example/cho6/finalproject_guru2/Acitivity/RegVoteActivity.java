@@ -269,6 +269,10 @@ public class RegVoteActivity extends AppCompatActivity {
             Toast.makeText(this, "종료 날짜가 없습니다. 날짜를 설정해 주세요.", Toast.LENGTH_SHORT).show();
             return;
         }
+        if(mSwitchPublic.isChecked() && TextUtils.isEmpty(mEdtCode.getText().toString())){
+            Toast.makeText(this, "참여코드를 설정해 주세요.", Toast.LENGTH_LONG).show();
+            return;
+        }
 
         VoteBean voteBean = new VoteBean();
         //데이터베이스에 저장한다.
