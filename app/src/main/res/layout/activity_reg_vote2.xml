@@ -1,234 +1,261 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
-        <EditText
-            android:id="@+id/edtTitle"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="투표제목"
-            android:inputType="textPersonName" />
-
-        <Switch
-            android:id="@+id/switchPublic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="비공개투표   " />
-    </LinearLayout>
+    android:orientation="vertical"
+    android:weightSum="10">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.2"
+        android:layout_weight="8.5"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/edtDetail"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_weight="1"
-            android:background="@drawable/edttextbox"
-
-            android:drawableTint="#909090"
-            android:ems="10"
-            android:hint="투표 설명"
-            android:inputType="textMultiLine" />
-
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="중복응답허용"
-            tools:layout_editor_absoluteY="229dp" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
-        android:orientation="vertical">
-
-        <ListView
-            android:id="@+id/lstChoice"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.5"></ListView>
-
-        <ImageButton
-            android:id="@+id/btnadditem"
-            android:layout_width="60dp"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight="0.3"
-            android:background="#FAFAFA"
-            android:padding="5dp"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/plus_copy" />
-
-        <EditText
-            android:id="@+id/edtCode"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.3"
-            android:ems="10"
-            android:hint="참여 코드"
-            android:inputType="textPersonName"
-            android:visibility="gone" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="시작시간:" />
+            <EditText
+                android:id="@+id/edtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1.5"
+                android:ems="10"
+                android:hint="투표제목"
+                android:inputType="textPersonName" />
 
-            <Button
-                android:id="@+id/btnStartDate"
-                android:layout_width="0dp"
+            <Switch
+                android:id="@+id/switchPublic"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.8"
-                android:background="@drawable/btn_bg"
-                android:text="날짜"
-                android:textColor="#F5F1F1" />
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="비공개투표   " />
+        </LinearLayout>
 
-            <Button
-                android:id="@+id/btnStartTime"
-                android:layout_width="0dp"
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.2"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edtDetail"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/edttextbox"
+
+                android:drawableTint="#909090"
+                android:ems="10"
+                android:hint="투표 설명"
+                android:inputType="textMultiLine" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="0.8"
-                android:background="@drawable/btn_bg"
-                android:text="시간"
-                android:textColor="#F5F1F1" />
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="중복응답허용"
+                tools:layout_editor_absoluteY="229dp" />
+        </LinearLayout>
 
-            <TextView
-                android:id="@+id/txtStartDate"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:hint="날짜표시" />
 
-            <TextView
-                android:id="@+id/txtStartTime"
-                android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/lstChoice"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:hint="시간표시" />
+                android:scrollingCache="false"
+                android:smoothScrollbar="true" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+            <ImageButton
+                android:id="@+id/btnadditem"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#FAFAFA"
+                android:padding="5dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/plus_copy" />
+
+            <EditText
+                android:id="@+id/edtCode"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="종료시간:" />
-
-            <Button
-                android:id="@+id/btnEndDate"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.8"
-                android:background="@drawable/btn_bg"
-                android:text="날짜"
-                android:textColor="#F5F1F1" />
-
-            <Button
-                android:id="@+id/btnEndTime"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="0.8"
-                android:background="@drawable/btn_bg"
-                android:text="시간"
-                android:textColor="#F5F1F1" />
-
-            <TextView
-                android:id="@+id/txtEndDate"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:hint="날짜표시" />
-
-            <TextView
-                android:id="@+id/txtEndTime"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:hint="시간표시" />
+                android:ems="10"
+                android:hint="참여 코드"
+                android:inputType="textPersonName"
+                android:visibility="visible" />
         </LinearLayout>
 
     </LinearLayout>
 
 
-    <FrameLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"
-        android:orientation="vertical">
+        android:layout_weight="1.5">
 
-        <Button
-            android:id="@+id/btnReg"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/btn_bg"
-            android:text="투표생성"
-            android:textColor="#F5F1F1" />
+            android:orientation="vertical">
 
-    </FrameLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="시작시간:" />
+
+                    <Button
+                        android:id="@+id/btnStartDate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:background="@drawable/btn_bg"
+                        android:text="날짜"
+                        android:textColor="#F5F1F1" />
+
+                    <Button
+                        android:id="@+id/btnStartTime"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="0.8"
+                        android:background="@drawable/btn_bg"
+                        android:text="시간"
+                        android:textColor="#F5F1F1" />
+
+                    <TextView
+                        android:id="@+id/txtStartDate"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="날짜표시" />
+
+                    <TextView
+                        android:id="@+id/txtStartTime"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="시간표시" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="종료시간:" />
+
+                    <Button
+                        android:id="@+id/btnEndDate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:background="@drawable/btn_bg"
+                        android:text="날짜"
+                        android:textColor="#F5F1F1" />
+
+                    <Button
+                        android:id="@+id/btnEndTime"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="0.8"
+                        android:background="@drawable/btn_bg"
+                        android:text="시간"
+                        android:textColor="#F5F1F1" />
+
+                    <TextView
+                        android:id="@+id/txtEndDate"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="날짜표시" />
+
+                    <TextView
+                        android:id="@+id/txtEndTime"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="시간표시" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnReg"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/btn_bg"
+                    android:text="투표생성"
+                    android:textColor="#F5F1F1" />
+
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>
