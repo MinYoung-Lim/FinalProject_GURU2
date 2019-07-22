@@ -45,11 +45,12 @@ public class MyVoteListActivity extends AppCompatActivity {
         super.onResume();
 
 
-        mFirebaseDB.getReference().child("votes").addListenerForSingleValueEvent(new ValueEventListener() {
+        mFirebaseDB.getReference().child("votes").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 String memId = Utils.getUserIdFromUUID(mFirebaseAuth.getCurrentUser().getEmail());
+                mUserVoteList.clear();
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     //VotedBean votedBean = snapshot.getValue(VotedBean.class);
@@ -57,7 +58,6 @@ public class MyVoteListActivity extends AppCompatActivity {
 
                     try{
                         if(bean.votedList.size()>0) {
-                            mUserVoteList.clear();
                             //자신이 투표한 리스트만 보이게 함
                             for(int i=0; i<bean.votedList.size();i++) {
                                 if (TextUtils.equals(memId, bean.votedList.get(i).uuid))
@@ -71,6 +71,7 @@ public class MyVoteListActivity extends AppCompatActivity {
 
                     //바뀐 데이터로 refresh 한다
                     if (mUserVoteAdapter != null) {
+                        mUserVoteAdapter.setList(mUserVoteList);
                         mUserVoteAdapter.notifyDataSetChanged();
                     }
 

@@ -27,10 +27,14 @@ public class UserVoteAdapter extends BaseAdapter {
 
     private static FirebaseDatabase mFirebaseDatabase = FirebaseDatabase.getInstance();
 
-    public UserVoteAdapter(Context context, List <VoteBean> UserVoteList){
+    public UserVoteAdapter(Context context, List<VoteBean> UserVoteList){
         mContext = context;
         mUserVoteList = UserVoteList;
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    }
+
+    public void setList(List<VoteBean> userVoteList){
+        mUserVoteList = userVoteList;
     }
 
     @Override
