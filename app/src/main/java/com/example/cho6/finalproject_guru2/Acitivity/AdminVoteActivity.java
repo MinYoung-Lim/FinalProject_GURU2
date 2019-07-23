@@ -37,6 +37,7 @@ public class AdminVoteActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 String memId = Utils.getUserIdFromUUID(mFirebaseAuth.getCurrentUser().getEmail());
+                mEndVoteList.clear();
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     VoteBean bean = snapshot.getValue(VoteBean.class);
